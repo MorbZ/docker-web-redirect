@@ -27,14 +27,7 @@ services:
   redirect:
     image: morbz/docker-web-redirect
     restart: always
-    ports:
-      - 80
     environment:
       - VIRTUAL_HOST=myolddomain.net
       - REDIRECT_TARGET=mydomain.net
-
-networks:
-  default:
-    external:
-      name: nginx-proxy
 ```

@@ -1,11 +1,11 @@
 FROM nginx:1.15-alpine
 
-COPY start.sh /start.sh
+COPY start.sh /usr/local/bin/
 
 RUN apk add --update bash \
 	&& rm -rf /var/cache/apk/* \
-	&& chmod +x /start.sh
+	&& chmod +x /usr/local/bin/start.sh
 
 EXPOSE 80
 
-CMD /start.sh
+CMD ["start.sh"]
