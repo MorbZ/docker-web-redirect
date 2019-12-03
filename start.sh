@@ -15,7 +15,7 @@ else
 fi
 
 # Default to 80
-export LISTEN="80"
+LISTEN="80"
 # Listen to PORT variable given on Cloud Run Context
 if [ ! -z "$PORT" ]; then
 	LISTEN="$PORT"
