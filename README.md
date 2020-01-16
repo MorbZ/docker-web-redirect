@@ -1,8 +1,10 @@
 # Docker-Web-Redirect #
 
-![Docker Build Status](https://img.shields.io/docker/build/morbz/docker-web-redirect.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/morbz/docker-web-redirect.svg) ![Docker Stars](https://img.shields.io/docker/stars/morbz/docker-web-redirect.svg)
+![Docker Build Status](https://img.shields.io/docker/build/m4rc77/docker-web-redirect.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/m4rc77/docker-web-redirect.svg) ![Docker Stars](https://img.shields.io/docker/stars/m4rc77/docker-web-redirect.svg)
 
 This Docker container listens (by default) on port 8080 and redirects all web traffic permanently to the given target domain/URL.
+
+_Hint: This repo was forked from https://github.com/MorbZ/docker-web-redirect._
 
 ## Features ##
 - Lightweight: Uses only ~2 MB RAM on Linux
@@ -17,9 +19,9 @@ The target domain/URL is set by the `REDIRECT_TARGET` environment variable.
 The port may be changed to another port than 8080 by the `PORT` environment variable.
 Possible redirect targets include domains (`mydomain.net`), paths (`mydomain.net/my_page`) or specific protocols (`https://mydomain.net/my_page`).  
 
-**Example (Listen on Port 8080):** `$ docker run --rm -d -e REDIRECT_TARGET=mydomain.net -p 8080:8080 morbz/docker-web-redirect`
+**Example (Listen on Port 8080):** `$ docker run --rm -d -e REDIRECT_TARGET=mydomain.net -p 8080:8080 m4rc77/docker-web-redirect`
 
-**Example (Listen on Port 80):** `$ docker run --rm -d -u0:0  -e REDIRECT_TARGET=mydomain.net -e PORT=80 -p 80:80 morbz/docker-web-redirect `
+**Example (Listen on Port 80):** `$ docker run --rm -d -u0:0  -e REDIRECT_TARGET=mydomain.net -e PORT=80 -p 80:80 m4rc77/docker-web-redirect `
 
 ### Paths are retained ###
 The URL path and GET parameters are retained. That means that a request to `http://myolddomain.net/index.php?page=2` will be redirected to `http://mydomain.net/index.php?page=2` when `REDIRECT_TARGET=mydomain.net` is set.
@@ -34,7 +36,7 @@ This image can be combined with the [jwilder nginx-proxy](https://hub.docker.com
 version: '3'
 services:
   redirect:
-    image: morbz/docker-web-redirect
+    image: m4rc77/docker-web-redirect
     restart: always
     environment:
       - VIRTUAL_HOST=myolddomain.net
@@ -42,4 +44,4 @@ services:
 ```
 
 ### Build the image yourself ###
-`$ docker build -t morbz/docker-web-redirect:latest .`
+`$ docker build -t m4rc77/docker-web-redirect:latest .`
