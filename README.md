@@ -2,8 +2,8 @@
 
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/m4rc77/docker-web-redirect) 
 ![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/m4rc77/docker-web-redirect) 
-![Docker Pulls](https://img.shields.io/docker/pulls/m4rc77/docker-web-redirect.svg) 
-![Docker Stars](https://img.shields.io/docker/stars/m4rc77/docker-web-redirect.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/m4rc77/docker-web-redirect)
+![Docker Stars](https://img.shields.io/docker/stars/m4rc77/docker-web-redirect)
 
 This Docker container listens (by default) on port 8080 and redirects all web traffic permanently to the given target domain/URL.
 
