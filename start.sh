@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ -z "$REDIRECT_TYPE" ]; then
+	REDIRECT_TYPE="permanent"
+fi
+
 if [ -z "$REDIRECT_TARGET" ]; then
 	echo "Redirect target variable not set (REDIRECT_TARGET)"
 	exit 1
@@ -25,7 +29,7 @@ cat <<EOF > /etc/nginx/conf.d/default.conf
 server {
 	listen ${LISTEN};
 
-	rewrite ^/(.*)\$ ${REDIRECT_TARGET}\$1 permanent;
+	rewrite ^/(.*)\$ ${REDIRECT_TARGET}\$1 ${REDIRECT_TYPE};
 }
 EOF
 
