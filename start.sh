@@ -3,9 +3,9 @@ if [ -z "$REDIRECT_TARGET" ]; then
 	echo "Redirect target variable not set (REDIRECT_TARGET)"
 	exit 1
 else
-	# Add http if not set
-	if ! [[ $REDIRECT_TARGET =~ ^https?:// ]]; then
-		REDIRECT_TARGET="http://$REDIRECT_TARGET"
+	# Add https if not set
+	if ! [[ $REDIRECT_TARGET =~ ^http?:// ]]; then
+		REDIRECT_TARGET="https://$REDIRECT_TARGET"
 	fi
 
 	# Add trailing slash
@@ -14,8 +14,8 @@ else
 	fi
 fi
 
-# Default to 80
-LISTEN="80"
+# Default to 8080
+LISTEN="8080"
 # Listen to PORT variable given on Cloud Run Context
 if [ ! -z "$PORT" ]; then
 	LISTEN="$PORT"
