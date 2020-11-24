@@ -2,12 +2,12 @@
 
 ![Docker Build Status](https://img.shields.io/docker/build/morbz/docker-web-redirect.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/morbz/docker-web-redirect.svg) ![Docker Stars](https://img.shields.io/docker/stars/morbz/docker-web-redirect.svg)
 
-This Docker container listens on port 80 and redirects all web traffic permanently to the given target domain/URL.
+This Docker container listens on port 80 and redirects all web traffic to the given target domain/URL.
 
 ## Features ##
 - Lightweight: Uses only ~2 MB RAM on Linux
 - Keeps the URL path and GET parameters
-- Permanent redirect (HTTP 301)
+- Permanent or temporary redirect
 
 ## Usage ##
 ### Docker run ###
