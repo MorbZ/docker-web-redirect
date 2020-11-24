@@ -21,11 +21,17 @@ if [ ! -z "$PORT" ]; then
 	LISTEN="$PORT"
 fi
 
+# Default to permanent
+TYPE="permanent"
+if [ ! -z "$TEMPORARY"]; then
+  TYPE="redirect"
+fi
+
 cat <<EOF > /etc/nginx/conf.d/default.conf
 server {
 	listen ${LISTEN};
 
-	rewrite ^/(.*)\$ ${REDIRECT_TARGET}\$1 permanent;
+	rewrite ^/(.*)\$ ${REDIRECT_TARGET}\$1 ${TYPE};
 }
 EOF
 
