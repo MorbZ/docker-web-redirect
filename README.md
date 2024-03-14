@@ -20,10 +20,7 @@ Possible redirect targets include domains (`mydomain.net`), paths (`mydomain.net
 The URL path and GET parameters are retained by default. That means that a request to `http://myolddomain.net/index.php?page=2` will be redirected to `http://mydomain.net/index.php?page=2` when `REDIRECT_TARGET=mydomain.net` is set. If you do not want to retain the path and GET parameters, set the environment variable `RETAIN_PATH` to `false`.
 
 ### Permanent redirects ###
-Redirects are, by default, permanent (HTTP status code 301). That means browsers will cache the redirect and will go directly to the new site on further requests. Also search engines will recognize the new domain and change their URLs. This means this image is not suitable for temporary redirects e.g. for site maintenance.
-
-### Temporary redirects ###
-To make redirects temporary (HTTP status code 302) set the environment variable `REDIRECT_TYPE` to `redirect`.
+Redirects are, by default, permanent (HTTP status code 301). That means browsers will cache the redirect and will go directly to the new site on further requests. Also search engines will recognize the new domain and change their URLs. To make redirects temporary (HTTP status code 302), e.g. for site maintenance, set the environment variable `REDIRECT_TYPE` to `redirect`.
 
 ## Docker Compose ##
 This image can be combined with the [jwilder nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy/). A sample docker-compose file that redirects `myolddomain.net` to `mydomain.net` could look like this:
