@@ -42,7 +42,7 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: |
-            hub.docker.com/repository/docker/morbz/docker-web-redirect
+            morbz/docker-web-redirect
             ghcr.io/${{ github.repository }}
 
       - name: Build and push Docker images
